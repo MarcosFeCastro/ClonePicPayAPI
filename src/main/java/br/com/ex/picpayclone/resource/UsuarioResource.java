@@ -3,6 +3,7 @@ package br.com.ex.picpayclone.resource;
 import br.com.ex.picpayclone.dto.UsuarioDTO;
 import br.com.ex.picpayclone.resource.swagger.IUsuarioResource;
 import br.com.ex.picpayclone.service.IUsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @RequestMapping("/usuarios")
 public class UsuarioResource extends ResourceBase<UsuarioDTO> implements IUsuarioResource {
 
+    @Autowired
     private IUsuarioService usuarioService;
 
     @GetMapping("/{login}")

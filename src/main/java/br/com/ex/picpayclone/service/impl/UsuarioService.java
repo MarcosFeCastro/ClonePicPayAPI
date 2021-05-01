@@ -54,7 +54,7 @@ public class UsuarioService implements IUsuarioService {
     @Override
     public List<UsuarioDTO> listar(String login) {
         List<Usuario> usuarios = usuarioRepository.findAll();
-        List<Usuario> usuariosFiltrados = usuarios.stream().filter(v -> v.getLogin().equals(login)).collect(Collectors.toList());
+        List<Usuario> usuariosFiltrados = usuarios.stream().filter(v -> !v.getLogin().equals(login)).collect(Collectors.toList());
         return usuarioConversor.converterEntidadesParaDtos(usuariosFiltrados);
     }
 
