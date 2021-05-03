@@ -15,7 +15,7 @@ import java.util.List;
 public interface IUsuarioResource {
 
     @ApiOperation(value = "Consultar saldo de um usuário por login", nickname = "consultarSaldo", notes = "", response = UsuarioDTO.class, responseContainer = "object", authorizations = {
-            @Authorization(value = "basicAuth") }, tags = { "usuarios" })
+            @Authorization(value = "Authorization") }, tags = { "usuarios" })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Saldo consultado com sucesso", response = UsuarioDTO.class, responseContainer = "object"),
             @ApiResponse(code = 400, message = "Dados informados para a requisição estão inconsistentes", response = ErrorDTO.class, responseContainer = "object"),
@@ -25,7 +25,7 @@ public interface IUsuarioResource {
     public ResponseEntity<UsuarioDTO> consultarSaldo(@PathVariable String login);
 
     @ApiOperation(value = "Consultar contatos de um usuário por login", nickname = "listarContatos", notes = "", response = UsuarioDTO.class, responseContainer = "object", authorizations = {
-            @Authorization(value = "basicAuth") }, tags = { "usuarios", })
+            @Authorization(value = "Authorization") }, tags = { "usuarios", })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Contatos encontrado com sucesso", response = UsuarioDTO.class, responseContainer = "object"),
             @ApiResponse(code = 400, message = "Dados informados para a requisição estão inconsistentes", response = ErrorDTO.class, responseContainer = "object"),
@@ -35,7 +35,7 @@ public interface IUsuarioResource {
     public ResponseEntity<List<UsuarioDTO>> listar(@RequestParam String login);
 
     @ApiOperation(value = "Consultar usuário por login", nickname = "consultarUsuarios", notes = "", response = UsuarioDTO.class, responseContainer = "object", authorizations = {
-            @Authorization(value = "basicAuth") }, tags = { "usuarios", })
+            @Authorization(value = "Authorization") }, tags = { "usuarios", })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Usuário encontrado com sucesso", response = UsuarioDTO.class, responseContainer = "object"),
             @ApiResponse(code = 400, message = "Dados informados para a requisição estão inconsistentes", response = ErrorDTO.class, responseContainer = "object"),

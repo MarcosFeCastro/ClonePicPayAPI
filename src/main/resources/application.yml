@@ -18,3 +18,27 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     format_sql: true
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+
+# JWT
+picpayclone:
+  jwt:
+    expiration: 86400000
+    secret: test
+
+# Actuator
+management:
+  endpoint:
+    health:
+      show-details: always
+    web:
+      exposure:
+        include: '*'
+info:
+  app:
+    name: '@project.name@'
+    version: '@project.version@'
